@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Deep Corporate Blue (Primary) ── */
+  --color-brand-50:  #f0f4f9;
+  --color-brand-100: #dce5f2;
+  --color-brand-200: #b9cbe5;
+  --color-brand-300: #8ba9d3;
+  --color-brand-400: #5982bf;
+  --color-brand-500: #3864a7;
+  --color-brand-600: #294d8b;
+  --color-brand-700: #223e71;
+  --color-brand-800: #1f355c;
+  --color-brand-900: #101c38; /* Very deep corporate blue */
+
+  /* ── Vibrant Red (Accent / CTA) ── */
+  --color-accent-50:  #fff0f2;
+  --color-accent-100: #ffe1e5;
+  --color-accent-200: #ffc7ce;
+  --color-accent-300: #ff9da8;
+  --color-accent-400: #ff6375;
+  --color-accent-500: #f62d47; /* Sharp, attention-grabbing red */
+  --color-accent-600: #e31835;
+  --color-accent-700: #c10f27;
+  --color-accent-800: #a21025;
+  --color-accent-900: #881324;
+
+  --font-sans: var(--font-jakarta);
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #0f172a;
+  }
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Ensure smooth scroll on anchor clicks */
+html {
+  scroll-padding-top: 80px;
+}
