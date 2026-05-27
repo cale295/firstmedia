@@ -38,6 +38,7 @@ export const storageService = {
     const supabase = createClient();
     
     // Extract the exact path inside the bucket from the URL string
+    if (!publicUrl) return false;
     const urlParts = publicUrl.split(`/${bucket}/`);
     if (urlParts.length !== 2) return false;
     
