@@ -9,17 +9,32 @@ interface HeroProps {
 export default function Hero({ localArea }: HeroProps) {
   return (
     <section className="relative bg-white pt-24 pb-16 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
-      {/* Background Decorations */}
+      {/* ── MOBILE HERO BACKGROUND BANNER (Visible only on < 1024px) ── */}
+      <div className="block lg:hidden absolute inset-0 z-0">
+        <Image
+          src={IMAGES.BANNERS.BANNER}
+          alt={localArea ? `Promo First Media ${localArea}` : "Promo First Media"}
+          fill
+          priority
+          fetchPriority="high"
+          className="object-cover object-center"
+          sizes="(max-width: 1024px) 100vw, 0vw"
+        />
+        {/* Overlay to ensure text readability */}
+        <div className="absolute inset-0"></div>
+      </div>
+
+      {/* Background Decorations (Optimized: Removed blur-3xl for LCP) */}
       <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3">
-        <div className="w-[600px] h-[600px] bg-brand-50 rounded-full blur-3xl opacity-60"></div>
+        <div className="w-[600px] h-[600px] bg-brand-50 rounded-full opacity-40"></div>
       </div>
       <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3">
-        <div className="w-[500px] h-[500px] bg-accent-50 rounded-full blur-3xl opacity-60"></div>
+        <div className="w-[500px] h-[500px] bg-accent-50 rounded-full opacity-40"></div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          
+
           {/* Left Text Content */}
           <header className="flex-1 space-y-8 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 bg-brand-50 border border-brand-100 text-brand-700 text-xs font-extrabold uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
@@ -75,33 +90,34 @@ export default function Hero({ localArea }: HeroProps) {
                 <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-brand-500 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
-            
+
             <p className="text-sm text-slate-400 font-medium pt-2">
               *Harga belum termasuk PPN 11% dan biaya sewa perangkat.
             </p>
           </header>
 
           {/* Right Hero Image / Marketing Banner */}
-          <div className="flex-1 w-full max-w-lg lg:max-w-xl mx-auto relative group">
+          <div className="hidden lg:block flex-1 w-full max-w-lg lg:max-w-xl mx-auto relative group">
             {/* Decorative Offset Background */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-brand-500 to-accent-500 rounded-[2.5rem] transform rotate-3 scale-[1.02] -z-10 opacity-20 group-hover:rotate-6 transition-transform duration-500"></div>
-            
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-500 to-accent-500 rounded-[2.5rem] transform rotate-3 scale-[1.02] -z-10 opacity-20"></div>
+
             {/* Main Lifestyle Image Container */}
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl bg-slate-100 aspect-[4/5] sm:aspect-square md:aspect-[4/3] lg:aspect-[4/5]">
-              <Image 
+              <Image
                 src={IMAGES.HERO.MAIN}
                 alt={localArea ? `Keluarga menggunakan internet fiber optic First Media di ${localArea}` : "Keluarga menggunakan internet fiber optic First Media"}
                 fill
                 priority
+                fetchPriority="high"
                 className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                sizes="(max-width: 1024px) 0vw, 50vw"
               />
-              
+
               {/* Gradient Overlay for Text Readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-              {/* Floating Speed Highlight */}
-              <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/40 transform hover:-translate-y-1 transition-transform">
+              {/* Floating Speed Highlight (Optimized: Removed backdrop blur) */}
+              <div className="absolute top-6 right-6 bg-white/95 rounded-2xl p-4 shadow-xl border border-white/40">
                 <div className="flex items-center gap-3">
                   <div className="bg-brand-100 p-2 rounded-full">
                     <Wifi className="w-6 h-6 text-brand-600" />
@@ -130,7 +146,7 @@ export default function Hero({ localArea }: HeroProps) {
                 </p>
               </div>
             </div>
-            
+
           </div>
 
         </div>

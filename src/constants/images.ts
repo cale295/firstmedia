@@ -40,6 +40,6 @@ export const IMAGES = {
     DEFAULT_THUMBNAIL: "/images/packages/default-package.jpg",
   },
   BANNERS: {
-    PROMO: "/images/banners/promo-banner.jpg",
+    BANNER: "/images/banners/banner.webp",
   }
 } as const;
