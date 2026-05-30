@@ -20,7 +20,7 @@ export default async function Packages() {
     <section id="packages" className="py-24 bg-white border-t border-slate-100 relative">
       {/* Decorative gradient blob */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-brand-50 rounded-[100%] blur-3xl opacity-60 -z-10"></div>
-      
+
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <header className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <p className="text-brand-600 font-bold tracking-widest uppercase text-sm mb-2">Pilihan Paket</p>
@@ -34,16 +34,15 @@ export default async function Packages() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-end max-w-6xl mx-auto">
           {activePackages.map((pkg, idx) => {
-            const isPopular = idx === 1; // Highlight middle card
-            
+            const isPopular = pkg.is_popular; // Database-driven highlight
+
             return (
               <article
                 key={pkg.id}
-                className={`relative rounded-[2.5rem] flex flex-col h-full transition-all duration-300 ${
-                  isPopular
-                    ? "bg-brand-900 text-white shadow-2xl shadow-brand-900/30 lg:-translate-y-4 border border-brand-800"
-                    : "bg-white text-slate-900 border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-200"
-                }`}
+                className={`relative rounded-[2.5rem] flex flex-col h-full transition-all duration-300 ${isPopular
+                  ? "bg-brand-900 text-white shadow-2xl shadow-brand-900/30 lg:-translate-y-4 border border-brand-800"
+                  : "bg-white text-slate-900 border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-200"
+                  }`}
               >
                 {isPopular && (
                   <div className="absolute -top-5 left-0 right-0 flex justify-center z-10">
@@ -62,7 +61,6 @@ export default async function Packages() {
                       <span className={`text-6xl font-black tracking-tighter ${isPopular ? 'text-white' : 'text-brand-800'}`}>
                         {pkg.speed}
                       </span>
-                      <span className={`font-bold text-lg ${isPopular ? 'text-brand-300' : 'text-brand-600'}`}>Mbps</span>
                     </div>
                   </div>
                   {pkg.description && (
@@ -78,7 +76,9 @@ export default async function Packages() {
                     <p className={`text-xs font-bold mb-1 uppercase tracking-wider ${isPopular ? 'text-brand-400' : 'text-slate-400'}`}>Harga berlangganan</p>
                     <div className="flex items-start gap-1">
                       <span className={`text-lg font-bold mt-1 ${isPopular ? 'text-brand-300' : 'text-slate-400'}`}>Rp</span>
-                      <span className="text-4xl font-black tracking-tighter">{pkg.price}</span>
+                      <span className="text-4xl font-black tracking-tighter">
+                        {new Intl.NumberFormat("id-ID").format(Number(pkg.price.replace(/\\D/g, '')))}
+                      </span>
                       <span className={`text-sm self-end mb-1 ml-1 font-semibold ${isPopular ? 'text-brand-300' : 'text-slate-500'}`}>/bln</span>
                     </div>
                   </div>
@@ -97,16 +97,15 @@ export default async function Packages() {
                   </div>
 
                   <a
-                    href={`https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20${encodeURIComponent(
+                    href={`https://wa.me/62895329158096?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20${encodeURIComponent(
                       pkg.name
                     )}%20(${pkg.speed}).%20Mohon%20info%20lebih%20lanjut.`}
                     target="_blank"
                     rel="noreferrer"
-                    className={`w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-bold transition-all text-base ${
-                      isPopular
-                        ? "bg-accent-500 hover:bg-accent-600 text-white shadow-xl shadow-accent-500/20 active:scale-[0.98]"
-                        : "bg-slate-50 border border-slate-200 hover:border-brand-500 hover:bg-brand-50 hover:text-brand-700 text-slate-700 active:scale-[0.98]"
-                    }`}
+                    className={`w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-bold transition-all text-base ${isPopular
+                      ? "bg-accent-500 hover:bg-accent-600 text-white shadow-xl shadow-accent-500/20 active:scale-[0.98]"
+                      : "bg-slate-50 border border-slate-200 hover:border-brand-500 hover:bg-brand-50 hover:text-brand-700 text-slate-700 active:scale-[0.98]"
+                      }`}
                   >
                     Pilih Paket Ini
                     <ChevronRight className="w-5 h-5 text-current" />
@@ -116,7 +115,7 @@ export default async function Packages() {
             )
           })}
         </div>
-        
+
         <div className="mt-12 text-center">
           <p className="text-sm text-slate-500 font-medium">
             *Harga belum termasuk PPN 11% dan biaya perangkat. Syarat dan ketentuan berlaku.

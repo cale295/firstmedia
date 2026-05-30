@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Plus, Edit2, Trash2, X, Loader2, ListPlus } from "lucide-react";
+import { Plus, Edit2, Trash2, X, Loader2, ListPlus, Star } from "lucide-react";
 import { usePackages } from "@/hooks/usePackages";
 import { Database } from "@/types/database.types";
 
@@ -20,6 +20,7 @@ export default function AdminPackages() {
   const [description, setDescription] = useState("");
   const [features, setFeatures] = useState<string[]>([""]);
   const [active, setActive] = useState(true);
+  const [isPopular, setIsPopular] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function AdminPackages() {
       setDescription(pkg.description || "");
       setFeatures(pkg.features?.length ? [...pkg.features] : [""]);
       setActive(pkg.active);
+      setIsPopular(pkg.is_popular || false);
     } else {
       setEditingPackage(null);
       setName("");
@@ -43,6 +45,7 @@ export default function AdminPackages() {
       setDescription("");
       setFeatures([""]);
       setActive(true);
+      setIsPopular(false);
     }
     setIsModalOpen(true);
   };
@@ -76,11 +79,11 @@ export default function AdminPackages() {
     try {
       if (editingPackage) {
         await updatePackage(editingPackage.id, { 
-          name, speed, price, description, active, features: cleanedFeatures
+          name, speed, price, description, active, features: cleanedFeatures, is_popular: isPopular
         });
       } else {
         await createPackage({ 
-          name, speed, price, description, active, features: cleanedFeatures 
+          name, speed, price, description, active, features: cleanedFeatures, is_popular: isPopular
         });
       }
       closeFormModal();
@@ -159,7 +162,17 @@ export default function AdminPackages() {
               )}
               {packages.map((pkg) => (
                 <tr key={pkg.id} className="hover:bg-slate-50 transition">
-                  <td className="px-6 py-4 font-medium text-slate-900">{pkg.name}</td>
+                  <td className="px-6 py-4 font-medium text-slate-900">
+                    <div className="flex items-center gap-2">
+                      {pkg.name}
+                      {pkg.is_popular && (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 text-[10px] font-bold uppercase tracking-widest">
+                          <Star className="w-3 h-3 fill-current" />
+                          Popular
+                        </span>
+                      )}
+                    </div>
+                  </td>
                   <td className="px-6 py-4 text-slate-600">{pkg.speed}</td>
                   <td className="px-6 py-4 text-slate-600 font-mono">{pkg.price}</td>
                   <td className="px-6 py-4">
@@ -300,6 +313,20 @@ export default function AdminPackages() {
                 />
                 <label htmlFor="active-toggle" className="text-sm font-medium text-slate-700 select-none flex-1">
                   Active (Visible on public landing page)
+                </label>
+              </div>
+
+              <div className="flex items-start gap-3 bg-amber-50 p-4 rounded-xl border border-amber-100 mt-2">
+                <input
+                  type="checkbox"
+                  id="popular-toggle"
+                  className="w-5 h-5 text-amber-500 rounded focus:ring-amber-500 mt-0.5"
+                  checked={isPopular}
+                  onChange={(e) => setIsPopular(e.target.checked)}
+                />
+                <label htmlFor="popular-toggle" className="text-sm font-medium text-amber-900 select-none flex-1 cursor-pointer">
+                  <span className="block mb-0.5">Popular Package</span>
+                  <span className="block text-xs text-amber-700 font-normal">Highlight this package as the recommended option on the landing page.</span>
                 </label>
               </div>
             </form>

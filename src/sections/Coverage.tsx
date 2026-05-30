@@ -26,15 +26,15 @@ export default async function Coverage() {
           <div className="w-full lg:flex-1 relative z-10 h-[320px] sm:h-[400px] lg:h-[500px]">
             {/* The decorative offset background using fiber network image */}
             <div className="absolute inset-0 rounded-3xl transform -rotate-3 scale-[1.02] -z-10 overflow-hidden shadow-2xl">
-              <Image 
-                src={IMAGES.COVERAGE.FIBER_NETWORK} 
-                alt="Fiber Optic Network" 
-                fill 
+              <Image
+                src={IMAGES.COVERAGE.FIBER_NETWORK}
+                alt="Fiber Optic Network"
+                fill
                 className="object-cover opacity-80"
               />
               <div className="absolute inset-0 bg-brand-900/40 mix-blend-multiply"></div>
             </div>
-            
+
             {/* The Map */}
             <CoverageMapClient areas={activeAreas} />
           </div>
@@ -88,7 +88,7 @@ export default async function Coverage() {
                   <p className="text-xs text-brand-700 mt-1 font-medium">Hubungi kami untuk pengecekan detail via titik koordinat.</p>
                 </div>
                 <a
-                  href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20cek%20coverage%20area%20FirstMedia%20untuk%20alamat%20saya."
+                  href="https://wa.me/62895329158096?text=Halo%2C%20saya%20ingin%20cek%20coverage%20area%20FirstMedia%20untuk%20alamat%20saya."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto inline-flex items-center justify-center bg-brand-700 hover:bg-brand-800 text-white rounded-xl font-bold py-3 px-6 text-sm transition-colors shadow-md"

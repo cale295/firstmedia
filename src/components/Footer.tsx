@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <h3 className="text-white font-bold text-lg mb-6 tracking-wide">Navigasi</h3>
             <ul className="space-y-4">
-              {['Paket Internet', 'Coverage Area', 'Promo Terbaru', 'FAQ'].map((item, idx) => (
+              {['Paket Internet', 'Coverage Area', 'FAQ'].map((item, idx) => (
                 <li key={idx}>
                   <Link href={`#${item.split(' ')[0].toLowerCase()}`} className="text-brand-100/70 hover:text-white hover:translate-x-1 transition-all text-sm font-medium flex items-center gap-2">
                     <div className="w-1 h-1 bg-accent-500 rounded-full"></div>
@@ -51,7 +51,7 @@ export default function Footer() {
             <h3 className="text-white font-bold text-lg mb-6 tracking-wide">Hubungi Kami</h3>
             <ul className="space-y-5">
               <li>
-                <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" className="flex items-start gap-3 group">
+                <a href="https://wa.me/62895329158096" target="_blank" rel="noreferrer" className="flex items-start gap-3 group">
                   <div className="bg-white/5 p-2 rounded-lg group-hover:bg-accent-500 transition-colors">
                     <Phone className="w-4 h-4 text-accent-400 group-hover:text-white transition-colors" />
                   </div>

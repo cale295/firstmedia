@@ -3,7 +3,7 @@ import { createClient } from "@/lib/supabase/client";
 export const storageService = {
   /**
    * Upload an image to a Supabase Storage bucket and return the public URL.
-   * @param bucket The name of the storage bucket (e.g. "promos")
+   * @param bucket The name of the storage bucket (e.g. "packages")
    * @param file The File object to upload
    * @returns The public URL of the uploaded image
    */

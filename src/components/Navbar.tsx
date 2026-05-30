@@ -32,7 +32,7 @@ export default function Navbar() {
         <a href="tel:+62150788" className="font-bold hover:text-accent-300 transition-colors">150788</a>
         <span className="mx-4 opacity-40">|</span>
         <span className="opacity-80">WhatsApp: </span>
-        <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" className="font-bold hover:text-accent-300 transition-colors">0812-3456-7890</a>
+        <a href="https://wa.me/62895329158096" target="_blank" rel="noreferrer" className="font-bold hover:text-accent-300 transition-colors">0812-3456-7890</a>
       </div>
 
       {/* Main navbar */}
@@ -65,7 +65,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://wa.me/6281234567890"
+              href="https://wa.me/62895329158096"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 bg-accent-500 hover:bg-accent-600 shadow-md hover:shadow-lg shadow-accent-500/20 text-white px-6 py-3 rounded-full font-bold text-sm transition-all transform hover:-translate-y-0.5 active:translate-y-0"
@@ -103,7 +103,7 @@ export default function Navbar() {
             ))}
             <div className="h-px w-full bg-slate-100 my-2" />
             <a
-              href="https://wa.me/6281234567890"
+              href="https://wa.me/62895329158096"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2 bg-accent-500 text-white px-4 py-4 rounded-xl font-bold text-[15px] transition-colors shadow-sm active:scale-95"

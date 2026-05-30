@@ -74,7 +74,7 @@ export default function Hero({ localArea }: HeroProps) {
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <a
-                href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20berlangganan%20FirstMedia."
+                href="https://wa.me/62895329158096?text=Halo%2C%20saya%20ingin%20berlangganan%20FirstMedia."
                 target="_blank"
                 rel="noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-4 rounded-full shadow-xl shadow-accent-500/20 transition-all transform hover:-translate-y-1 active:translate-y-0 text-base"

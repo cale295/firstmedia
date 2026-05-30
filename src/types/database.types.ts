@@ -39,6 +39,7 @@ export interface Database {
           description: string | null
           features: string[] | null
           active: boolean
+          is_popular: boolean
           created_at: string
           updated_at: string
         }
@@ -50,6 +51,7 @@ export interface Database {
           description?: string | null
           features?: string[] | null
           active?: boolean
+          is_popular?: boolean
           created_at?: string
           updated_at?: string
         }
@@ -61,36 +63,7 @@ export interface Database {
           description?: string | null
           features?: string[] | null
           active?: boolean
-          created_at?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      promos: {
-        Row: {
-          id: string
-          title: string
-          description: string | null
-          image_url: string | null
-          active: boolean
-          created_at: string
-          updated_at: string
-        }
-        Insert: {
-          id?: string
-          title: string
-          description?: string | null
-          image_url?: string | null
-          active?: boolean
-          created_at?: string
-          updated_at?: string
-        }
-        Update: {
-          id?: string
-          title?: string
-          description?: string | null
-          image_url?: string | null
-          active?: boolean
+          is_popular?: boolean
           created_at?: string
           updated_at?: string
         }

@@ -11,7 +11,8 @@ export const packagesService = {
     const { data, error } = await supabase
       .from("packages")
       .select("*")
-      .order("created_at", { ascending: false });
+      .order("is_popular", { ascending: false })
+      .order("created_at", { ascending: true });
     if (error) throw error;
     return data;
   },
@@ -21,7 +22,8 @@ export const packagesService = {
       .from("packages")
       .select("*")
       .eq("active", true)
-      .order("price", { ascending: true });
+      .order("is_popular", { ascending: false })
+      .order("created_at", { ascending: true });
     if (error) throw error;
     return data;
   },

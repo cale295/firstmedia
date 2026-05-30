@@ -119,7 +119,7 @@ export default function CoverageMap({ areas }: CoverageMapProps) {
                 )}
 
                 <a
-                  href={`https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20pasang%20internet%20di%20area%20${encodeURIComponent(area.city)}.`}
+                  href={`https://wa.me/62895329158096?text=Halo%2C%20saya%20ingin%20pasang%20internet%20di%20area%20${encodeURIComponent(area.city)}.`}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-2 w-full bg-accent-500 hover:bg-accent-600 text-white py-2.5 rounded-lg text-sm font-bold transition-colors"

@@ -73,7 +73,7 @@ const jsonLd = {
   "image": "https://paketfirstmedia.web.id/og-image.jpg",
   "description": "Pasang First Media untuk area Jakarta, Tangerang, Bekasi, Depok, Bogor dan sekitarnya. Internet Fiber Optic cepat, stabil, dan cocok untuk streaming, gaming, serta work from home.",
   "url": "https://paketfirstmedia.web.id",
-  "telephone": "+6281234567890",
+  "telephone": "+62895329158096",
   "areaServed": [
     "Jakarta",
     "Tangerang",

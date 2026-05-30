@@ -7,7 +7,6 @@ import {
   LayoutDashboard,
   Package,
   MapPin,
-  Tag,
   LogOut,
   Menu,
   X,
@@ -18,7 +17,6 @@ import { useAuth } from "@/hooks/useAuth";
 const NAV_LINKS = [
   { name: "Overview", href: "/admin/dashboard", icon: LayoutDashboard },
   { name: "Packages", href: "/admin/dashboard/packages", icon: Package },
-  { name: "Promotions", href: "/admin/dashboard/promos", icon: Tag },
   { name: "Coverage Areas", href: "/admin/dashboard/areas", icon: MapPin },
 ];
 

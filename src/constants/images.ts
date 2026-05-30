@@ -32,10 +32,6 @@ export const IMAGES = {
     MAP_BG: "/images/coverage/coverage-map-bg.jpg",
     FIBER_NETWORK: "/images/coverage/fiber-network.jpg",
   },
-  PROMOS: {
-    JABODETABEK: "/images/promos/promo-jabodetabek.jpg",
-    INSTALLATION: "/images/promos/promo-installation.jpg",
-  },
   PACKAGES: {
     DEFAULT_THUMBNAIL: "/images/packages/default-package.jpg",
   },
