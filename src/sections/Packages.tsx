@@ -32,14 +32,14 @@ export default async function Packages() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-end max-w-6xl mx-auto">
+        <div className="flex flex-nowrap overflow-x-auto pb-8 pt-4 px-4 -mx-4 md:mx-auto md:px-0 gap-6 scroll-smooth snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8 items-end max-w-6xl">
           {activePackages.map((pkg, idx) => {
             const isPopular = pkg.is_popular; // Database-driven highlight
 
             return (
               <article
                 key={pkg.id}
-                className={`relative rounded-[2.5rem] flex flex-col h-full transition-all duration-300 ${isPopular
+                className={`relative rounded-[2.5rem] flex flex-col h-full transition-all duration-300 w-[300px] md:w-auto shrink-0 md:shrink snap-center ${isPopular
                   ? "bg-brand-900 text-white shadow-2xl shadow-brand-900/30 lg:-translate-y-4 border border-brand-800"
                   : "bg-white text-slate-900 border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-200"
                   }`}
