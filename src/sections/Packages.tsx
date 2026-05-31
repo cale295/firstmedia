@@ -32,14 +32,14 @@ export default async function Packages() {
           </p>
         </header>
 
-        <div className="flex flex-nowrap overflow-x-auto pb-8 pt-4 px-4 -mx-4 md:mx-auto md:px-0 gap-6 scroll-smooth snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8 items-end max-w-6xl">
+        <div className="flex flex-nowrap overflow-x-auto pb-8 pt-4 px-4 -mx-4 md:mx-auto md:px-0 gap-4 scroll-smooth snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8 items-stretch md:items-end max-w-6xl">
           {activePackages.map((pkg, idx) => {
             const isPopular = pkg.is_popular; // Database-driven highlight
 
             return (
               <article
                 key={pkg.id}
-                className={`relative rounded-[2.5rem] flex flex-col h-full transition-all duration-300 w-[300px] md:w-auto shrink-0 md:shrink snap-center ${isPopular
+                className={`relative rounded-[2.5rem] flex flex-col h-full transition-all duration-300 w-[320px] min-h-[180px] shrink-0 md:shrink snap-center ${isPopular
                   ? "bg-brand-900 text-white shadow-2xl shadow-brand-900/30 lg:-translate-y-4 border border-brand-800"
                   : "bg-white text-slate-900 border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-200"
                   }`}
@@ -54,7 +54,7 @@ export default async function Packages() {
                 )}
 
                 {/* Card Header */}
-                <div className={`p-8 pb-6 border-b ${isPopular ? 'border-brand-800' : 'border-slate-100'}`}>
+                <div className={`p-5 pb-4 md:p-8 md:pb-6 border-b ${isPopular ? 'border-brand-800' : 'border-slate-100'}`}>
                   <h3 className={`text-xl font-bold mb-2 ${isPopular ? 'text-brand-200' : 'text-slate-500'}`}>{pkg.name}</h3>
                   <div className="flex flex-col mb-4">
                     <div className="flex items-baseline gap-2">
@@ -71,20 +71,20 @@ export default async function Packages() {
                 </div>
 
                 {/* Card Body - Pricing */}
-                <div className="p-8 pt-6 flex flex-col flex-grow">
-                  <div className={`mb-8 pb-6 border-b ${isPopular ? 'border-brand-800' : 'border-slate-100'}`}>
+                <div className="p-5 pt-4 md:p-8 md:pt-6 flex flex-col flex-grow">
+                  <div className={`mb-6 pb-4 md:mb-8 md:pb-6 border-b ${isPopular ? 'border-brand-800' : 'border-slate-100'}`}>
                     <p className={`text-xs font-bold mb-1 uppercase tracking-wider ${isPopular ? 'text-brand-400' : 'text-slate-400'}`}>Harga berlangganan</p>
                     <div className="flex items-start gap-1">
                       <span className={`text-lg font-bold mt-1 ${isPopular ? 'text-brand-300' : 'text-slate-400'}`}>Rp</span>
                       <span className="text-4xl font-black tracking-tighter">
-                        {new Intl.NumberFormat("id-ID").format(Number(pkg.price.replace(/\\D/g, '')))}
+                        {new Intl.NumberFormat("id-ID").format(Number(pkg.price.replace(/\D/g, '')))}
                       </span>
                       <span className={`text-sm self-end mb-1 ml-1 font-semibold ${isPopular ? 'text-brand-300' : 'text-slate-500'}`}>/bln</span>
                     </div>
                   </div>
 
                   {/* Features */}
-                  <div className="space-y-4 mb-10 flex-grow">
+                  <div className="space-y-4 mb-6 md:mb-10 flex-grow">
                     <p className={`font-bold text-sm ${isPopular ? 'text-white' : 'text-slate-900'}`}>Yang Anda dapatkan:</p>
                     <ul className="space-y-4">
                       {pkg.features?.map((feature, i) => (
