@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, ExternalLink, ShieldCheck } from "lucide-react";
 
 export default function Footer() {
@@ -15,12 +16,14 @@ export default function Footer() {
 
           {/* Brand Info (Col span 4) */}
           <div className="lg:col-span-4 space-y-6">
-            <Link href="/" className="inline-block" aria-label="First Media Home">
-              <div className="flex items-center gap-1.5 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/10 w-fit">
-                <span className="text-white font-black text-2xl tracking-tighter">FIRST</span>
-                <div className="w-1 h-6 bg-brand-400 rounded-full" />
-                <span className="text-accent-400 font-black text-2xl tracking-tighter">MEDIA</span>
-              </div>
+            <Link href="/" className="flex items-center shrink-0" aria-label="FirstMedia Home">
+              <Image
+                src="/images/logos/logo.webp"
+                alt="First Media Logo"
+                width={160}
+                height={48}
+                className="h-8 md:h-10 w-auto"
+              />
             </Link>
             <p className="text-brand-100/80 text-sm leading-relaxed font-medium max-w-sm">
               Penyedia layanan internet rumah Fiber Optic super cepat dan TV kabel berkualitas tinggi. Nikmati koneksi andal tanpa batas untuk seluruh keluarga Anda.
