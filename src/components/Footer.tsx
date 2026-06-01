@@ -83,19 +83,9 @@ export default function Footer() {
                     <Mail className="w-4 h-4 text-brand-300" aria-hidden="true" />
                   </div>
                   <div>
-                    <p className="text-white text-sm font-bold">info@pasangfirstmedia.com</p>
+                    <p className="text-white text-sm font-bold">alifrosyid20@gmail.com</p>
                     <p className="text-brand-100/60 text-xs mt-0.5">Email Support</p>
                   </div>
-                </div>
-              </li>
-              <li>
-                <div className="flex items-start gap-3">
-                  <div className="bg-white/5 p-2 rounded-lg mt-0.5">
-                    <MapPin className="w-4 h-4 text-brand-300" aria-hidden="true" />
-                  </div>
-                  <address className="text-brand-100/70 text-sm font-medium leading-relaxed not-italic">
-                    Jl. Jend. Sudirman Kav. 21,<br />Jakarta Selatan, 12920
-                  </address>
                 </div>
               </li>
             </ul>
@@ -133,7 +123,6 @@ export default function Footer() {
           <div className="flex flex-wrap justify-center gap-6">
             <Link href="#" className="text-brand-200/50 hover:text-white text-xs font-medium transition-colors">Kebijakan Privasi</Link>
             <Link href="#" className="text-brand-200/50 hover:text-white text-xs font-medium transition-colors">Syarat &amp; Ketentuan</Link>
-            <Link href="/admin/login" className="text-brand-200/50 hover:text-white text-xs font-medium transition-colors">Admin Login</Link>
           </div>
         </div>
       </div>
