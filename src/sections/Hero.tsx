@@ -138,9 +138,9 @@ export default function Hero({ localArea }: HeroProps) {
                   </span>
                   Promo Terbatas
                 </div>
-                <h2 className="text-white font-black text-2xl sm:text-3xl leading-tight mb-2">
+                <p className="text-white font-black text-2xl sm:text-3xl leading-tight mb-2">
                   Hiburan Tanpa Batas Untuk Keluarga
-                </h2>
+                </p>
                 <p className="text-white/80 text-sm sm:text-base font-medium line-clamp-2">
                   Streaming 4K, gaming lancar, dan WFH tanpa gangguan dengan koneksi fiber optic paling stabil.
                 </p>

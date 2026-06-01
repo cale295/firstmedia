@@ -1,7 +1,13 @@
-import { Package, MapPin, Activity, ArrowRight } from "lucide-react";
+"use client";
+
+import { Package, MapPin, ArrowRight, RefreshCw, AlertCircle } from "lucide-react";
 import Link from "next/link";
+import { useDashboardStats } from "@/hooks/useDashboardStats";
+import { StatsCard } from "@/components/admin/StatsCard";
 
 export default function DashboardOverview() {
+  const { activePackagesCount, activeAreasCount, loading, error, refresh } = useDashboardStats();
+
   return (
     <div className="space-y-10">
       <div>
@@ -9,33 +15,44 @@ export default function DashboardOverview() {
         <p className="text-slate-500 mt-2 font-medium text-lg">Pantau dan kelola konten landing page First Media Anda dari sini.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
-        <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-brand-50 rounded-2xl">
-              <Package className="w-6 h-6 text-brand-600" />
+      {error ? (
+        <div className="bg-red-50 border border-red-200 text-red-700 p-6 rounded-3xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 max-w-3xl">
+          <div className="flex items-start gap-3">
+            <AlertCircle className="w-6 h-6 text-red-500 shrink-0 mt-0.5" />
+            <div>
+              <h3 className="font-bold text-red-900">Gagal Memuat Data</h3>
+              <p className="text-sm text-red-700 mt-1">{error.message || "Terjadi kesalahan saat mengambil statistik dari database."}</p>
             </div>
-            <Activity className="w-5 h-5 text-green-500" />
           </div>
-          <div>
-            <h3 className="text-4xl font-black text-slate-900 mb-1">3</h3>
-            <p className="text-slate-500 text-sm font-bold uppercase tracking-wide">Paket Aktif</p>
-          </div>
+          <button
+            onClick={() => refresh()}
+            className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2.5 rounded-xl transition-colors font-semibold text-sm shrink-0 shadow-sm active:scale-95 cursor-pointer"
+          >
+            <RefreshCw className="w-4 h-4" />
+            Coba Lagi
+          </button>
         </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
+          <StatsCard
+            icon={Package}
+            label="Total Packages"
+            count={activePackagesCount}
+            loading={loading}
+            iconBgColor="bg-brand-50"
+            iconColor="text-brand-600"
+          />
 
-        <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-blue-50 rounded-2xl">
-              <MapPin className="w-6 h-6 text-blue-500" />
-            </div>
-            <Activity className="w-5 h-5 text-green-500" />
-          </div>
-          <div>
-            <h3 className="text-4xl font-black text-slate-900 mb-1">10</h3>
-            <p className="text-slate-500 text-sm font-bold uppercase tracking-wide">Area Coverage</p>
-          </div>
+          <StatsCard
+            icon={MapPin}
+            label="Total Coverage Areas"
+            count={activeAreasCount}
+            loading={loading}
+            iconBgColor="bg-blue-50"
+            iconColor="text-blue-500"
+          />
         </div>
-      </div>
+      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">

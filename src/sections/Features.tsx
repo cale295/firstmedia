@@ -6,6 +6,7 @@ const features = [
   {
     id: "streaming",
     title: "Streaming Tanpa Buffering",
+    alt: "Streaming film 4K Ultra HD tanpa buffering menggunakan internet fiber optic First Media",
     description: "Nikmati film dan series favorit dalam resolusi 4K Ultra HD tanpa jeda dengan koneksi fiber optic super stabil.",
     image: IMAGES.FEATURES.STREAMING,
     icon: Play,
@@ -14,6 +15,7 @@ const features = [
   {
     id: "gaming",
     title: "Gaming Ping Stabil",
+    alt: "Gaming online dengan ping stabil dan anti-lag menggunakan internet cepat First Media",
     description: "Dominasi setiap pertandingan esport dengan latency rendah dan koneksi anti-lag khusus untuk gamer sejati.",
     image: IMAGES.FEATURES.GAMING,
     icon: Gamepad2,
@@ -22,6 +24,7 @@ const features = [
   {
     id: "wfh",
     title: "Internet Cepat untuk WFH",
+    alt: "Bekerja dari rumah (WFH) lancar dengan koneksi internet fiber optic unlimited First Media",
     description: "Meeting online lancar, kirim file besar dalam hitungan detik. Produktivitas maksimal dari rumah.",
     image: IMAGES.FEATURES.WFH,
     icon: Laptop,
@@ -30,6 +33,7 @@ const features = [
   {
     id: "fiber",
     title: "Fiber Optic Super Cepat",
+    alt: "Infrastruktur fiber optic 100% First Media untuk kecepatan internet simetris upload dan download",
     description: "Didukung infrastruktur 100% Fiber Optic memastikan kecepatan simetris upload dan download tanpa batas kuota.",
     image: IMAGES.FEATURES.FIBER_OPTIC,
     icon: Zap,
@@ -38,6 +42,7 @@ const features = [
   {
     id: "family",
     title: "TV & Entertainment",
+    alt: "Menonton TV kabel 150 channel lebih dengan layanan First Media untuk keluarga",
     description: "Lebih dari 150+ channel TV lokal & internasional plus akses ke berbagai platform OTT untuk semua.",
     image: IMAGES.FEATURES.SMART_HOME,
     icon: Tv,
@@ -46,6 +51,7 @@ const features = [
   {
     id: "devices",
     title: "Support Banyak Device",
+    alt: "Internet rumah First Media mendukung banyak perangkat sekaligus tanpa lag di seluruh ruangan",
     description: "Koneksi stabil di seluruh ruangan rumah Anda meskipun digunakan oleh banyak perangkat secara bersamaan.",
     image: IMAGES.FEATURES.MULTIPLE_DEVICES,
     icon: Smartphone,
@@ -55,7 +61,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-24 bg-slate-50 relative">
+    <section className="py-24 bg-slate-50 relative" aria-label="Keunggulan Layanan Internet First Media">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
 
         {/* Section Header */}
@@ -79,7 +85,7 @@ export default function Features() {
               {/* Background Image */}
               <Image
                 src={feature.image}
-                alt={feature.title}
+                alt={feature.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -91,7 +97,7 @@ export default function Features() {
               {/* Content */}
               <div className="absolute inset-0 p-8 flex flex-col justify-end z-10 transform transition-transform duration-300 group-hover:-translate-y-2">
                 <div className="bg-white/20 backdrop-blur-md w-12 h-12 rounded-2xl flex items-center justify-center mb-6 border border-white/20">
-                  <feature.icon className="w-6 h-6 text-white" />
+                  <feature.icon className="w-6 h-6 text-white" aria-hidden="true" />
                 </div>
                 <h3 className="text-white font-black text-xl mb-3 leading-tight">{feature.title}</h3>
                 <p className="text-white/80 text-sm font-medium leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all">

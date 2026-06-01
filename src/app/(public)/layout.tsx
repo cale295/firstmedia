@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppFAB from "@/components/WhatsAppFAB";
 
 /**
  * Public layout — renders Navbar and Footer for all public-facing pages.
@@ -13,8 +14,10 @@ export default function PublicLayout({
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
       <Navbar />
-      <main className="flex-grow pt-[72px]">{children}</main>
+      <main className="flex-grow pt-[72px]" id="main-content">{children}</main>
       <Footer />
+      <WhatsAppFAB />
     </div>
   );
 }
+

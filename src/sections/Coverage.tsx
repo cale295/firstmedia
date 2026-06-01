@@ -23,7 +23,11 @@ export default async function Coverage() {
         <div className="flex flex-col lg:flex-row items-center gap-16 max-w-7xl mx-auto">
 
           {/* Interactive Map Component */}
-          <div className="w-full lg:flex-1 relative z-10 h-[320px] sm:h-[400px] lg:h-[500px]">
+          <div
+            className="w-full lg:flex-1 relative z-10 h-[320px] sm:h-[400px] lg:h-[500px]"
+            role="region"
+            aria-label="Peta interaktif coverage area First Media"
+          >
             {/* The decorative offset background using fiber network image */}
             <div className="absolute inset-0 rounded-3xl transform -rotate-3 scale-[1.02] -z-10 overflow-hidden shadow-2xl">
               <Image
@@ -63,8 +67,13 @@ export default async function Coverage() {
                 {activeAreas.length > 0 ? (
                   activeAreas.map((area) => (
                     area.slug ? (
-                      <a href={`/first-media-${area.slug}`} key={area.id} className="px-4 py-2 bg-slate-50 hover:bg-brand-50 hover:text-brand-700 hover:border-brand-200 border border-slate-200 text-slate-700 rounded-lg text-sm font-bold flex items-center gap-2 transition-colors">
-                        <MapPin className="w-3.5 h-3.5 text-brand-500" />
+                      <a
+                        href={`/first-media-${area.slug}`}
+                        key={area.id}
+                        className="px-4 py-2 bg-slate-50 hover:bg-brand-50 hover:text-brand-700 hover:border-brand-200 border border-slate-200 text-slate-700 rounded-lg text-sm font-bold flex items-center gap-2 transition-colors"
+                        aria-label={`Pasang First Media di ${area.city}`}
+                      >
+                        <MapPin className="w-3.5 h-3.5 text-brand-500" aria-hidden="true" />
                         {area.city}
                       </a>
                     ) : (

@@ -26,6 +26,15 @@ export const areasService = {
     return data;
   },
 
+  async getActiveCount() {
+    const { count, error } = await supabase
+      .from("areas")
+      .select("*", { count: "exact", head: true })
+      .eq("active", true);
+    if (error) throw error;
+    return count ?? 0;
+  },
+
   async create(area: AreaInsert) {
     const { data, error } = await supabase.from("areas").insert(area).select().single();
     if (error) throw error;

@@ -79,14 +79,17 @@ export default function Navbar() {
           <button
             className="md:hidden p-2 -mr-2 text-brand-900 hover:bg-slate-100 rounded-xl transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={mobileMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         <div
+          id="mobile-nav"
           className={`md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 transition-all duration-300 origin-top overflow-hidden shadow-lg ${mobileMenuOpen ? "opacity-100 max-h-96 py-4" : "opacity-0 max-h-0 py-0"
             }`}
         >

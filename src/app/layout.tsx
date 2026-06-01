@@ -11,44 +11,55 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://paketfirstmedia.web.id"),
   title: {
     template: "%s | FirstMedia ISP",
-    default: "Pasang First Media Jabodetabek | Internet Fiber Optic Cepat",
+    default: "Pasang First Media & XL SATU | Internet Fiber Cepat Jabodetabek",
   },
   description:
-    "Pasang First Media untuk area Jakarta, Tangerang, Bekasi, Depok, Bogor dan sekitarnya. Internet Fiber Optic cepat, stabil, dan cocok untuk streaming, gaming, serta work from home.",
+    "Pasang internet First Media dan XL SATU untuk rumah dan bisnis. Cek coverage area, pilih paket internet fiber terbaik, dan hubungi sales resmi untuk pemasangan cepat.",
   keywords: [
-    "Pasang First Media",
+    "first media",
+    "pasang first media",
+    "paket first media",
+    "internet fiber",
+    "xl satu",
+    "paket xl satu",
+    "internet rumah",
+    "internet cepat",
+    "wifi rumah",
+    "internet jabodetabek",
     "First Media Jakarta",
     "First Media Tangerang",
     "First Media Bekasi",
     "First Media Depok",
     "First Media Bogor",
-    "First Media Tangerang Selatan",
     "Internet Fiber Optic",
     "Pasang WiFi Rumah",
-    "Internet Rumah Cepat",
+    "Internet Unlimited",
   ],
   authors: [{ name: "FirstMedia ISP" }],
   creator: "FirstMedia ISP",
   openGraph: {
     locale: "id_ID",
     type: "website",
-    title: "Pasang First Media Jabodetabek | Internet Fiber Optic Cepat",
-    description: "Pasang First Media untuk area Jakarta, Tangerang, Bekasi, Depok, Bogor dan sekitarnya. Internet Fiber Optic cepat, stabil, dan cocok untuk streaming, gaming, serta work from home.",
+    title: "Pasang First Media & XL SATU | Internet Fiber Cepat Jabodetabek",
+    description:
+      "Pasang internet First Media dan XL SATU untuk rumah dan bisnis. Cek coverage area, pilih paket internet fiber terbaik, dan hubungi sales resmi untuk pemasangan cepat.",
     url: "https://paketfirstmedia.web.id",
     siteName: "FirstMedia ISP",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Pasang First Media Internet Fiber Optic Cepat",
+        alt: "Pasang First Media & XL SATU — Internet Fiber Optic Cepat Jabodetabek",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pasang First Media Jabodetabek | Internet Fiber Optic Cepat",
-    description: "Pasang First Media untuk area Jakarta, Tangerang, Bekasi, Depok, Bogor dan sekitarnya. Internet Fiber Optic cepat, stabil, dan cocok untuk streaming, gaming, serta work from home.",
+    title: "Pasang First Media & XL SATU | Internet Fiber Cepat Jabodetabek",
+    description:
+      "Pasang internet First Media dan XL SATU untuk rumah dan bisnis. Cek coverage area, pilih paket internet fiber terbaik, dan hubungi sales resmi untuk pemasangan cepat.",
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -66,22 +77,73 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
+const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "FirstMedia ISP",
-  "image": "https://paketfirstmedia.web.id/og-image.jpg",
-  "description": "Pasang First Media untuk area Jakarta, Tangerang, Bekasi, Depok, Bogor dan sekitarnya. Internet Fiber Optic cepat, stabil, dan cocok untuk streaming, gaming, serta work from home.",
-  "url": "https://paketfirstmedia.web.id",
-  "telephone": "+62895329158096",
-  "areaServed": [
+  "@type": "Organization",
+  name: "FirstMedia ISP — Sales Partner Resmi",
+  url: "https://paketfirstmedia.web.id",
+  logo: "https://paketfirstmedia.web.id/images/logos/firstmedia-logo.png",
+  telephone: "+62895329158096",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+62895329158096",
+    contactType: "sales",
+    areaServed: "ID",
+    availableLanguage: "Indonesian",
+  },
+  areaServed: [
     "Jakarta",
+    "Jakarta Selatan",
+    "Jakarta Barat",
+    "Jakarta Timur",
+    "Jakarta Utara",
     "Tangerang",
+    "Tangerang Selatan",
     "Bekasi",
     "Depok",
     "Bogor",
-    "Tangerang Selatan"
-  ]
+  ],
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "FirstMedia ISP — Agen Penjualan Resmi",
+  description:
+    "Agen penjualan resmi First Media dan XL SATU untuk layanan internet fiber optic rumah dan bisnis di wilayah Jabodetabek.",
+  url: "https://paketfirstmedia.web.id",
+  telephone: "+62895329158096",
+  image: "https://paketfirstmedia.web.id/images/og-image.jpg",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Jl. Jend. Sudirman Kav. 21",
+    addressLocality: "Jakarta Selatan",
+    addressRegion: "DKI Jakarta",
+    postalCode: "12920",
+    addressCountry: "ID",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -6.2087634,
+    longitude: 106.845599,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday",
+    ],
+    opens: "08:00",
+    closes: "20:00",
+  },
+  areaServed: [
+    { "@type": "City", name: "Jakarta" },
+    { "@type": "City", name: "Tangerang" },
+    { "@type": "City", name: "Tangerang Selatan" },
+    { "@type": "City", name: "Bekasi" },
+    { "@type": "City", name: "Depok" },
+    { "@type": "City", name: "Bogor" },
+  ],
+  priceRange: "Rp 299.000 - Rp 799.000/bulan",
 };
 
 /**
@@ -99,7 +161,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
       <body className="min-h-screen font-sans text-slate-800 overflow-x-hidden">

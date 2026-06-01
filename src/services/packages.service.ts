@@ -28,6 +28,15 @@ export const packagesService = {
     return data;
   },
 
+  async getActiveCount() {
+    const { count, error } = await supabase
+      .from("packages")
+      .select("*", { count: "exact", head: true })
+      .eq("active", true);
+    if (error) throw error;
+    return count ?? 0;
+  },
+
   async create(pkg: PackageInsert) {
     const { data, error } = await supabase.from("packages").insert(pkg).select().single();
     if (error) throw error;
