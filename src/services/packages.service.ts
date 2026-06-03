@@ -38,12 +38,42 @@ export const packagesService = {
   },
 
   async create(pkg: PackageInsert) {
+    let replacedPopular = false;
+    if (pkg.is_popular) {
+      const { data: existingPopular } = await supabase
+        .from("packages")
+        .select("id")
+        .eq("is_popular", true);
+      if (existingPopular && existingPopular.length > 0) {
+        replacedPopular = true;
+        await supabase
+          .from("packages")
+          .update({ is_popular: false })
+          .eq("is_popular", true);
+      }
+    }
     const { data, error } = await supabase.from("packages").insert(pkg).select().single();
     if (error) throw error;
-    return data;
+    return { data, replacedPopular };
   },
 
   async update(id: string, pkg: PackageUpdate) {
+    let replacedPopular = false;
+    if (pkg.is_popular) {
+      const { data: existingPopular } = await supabase
+        .from("packages")
+        .select("id")
+        .eq("is_popular", true)
+        .neq("id", id);
+      if (existingPopular && existingPopular.length > 0) {
+        replacedPopular = true;
+        await supabase
+          .from("packages")
+          .update({ is_popular: false })
+          .eq("is_popular", true)
+          .neq("id", id);
+      }
+    }
     const { data, error } = await supabase
       .from("packages")
       .update(pkg)
@@ -51,7 +81,7 @@ export const packagesService = {
       .select()
       .single();
     if (error) throw error;
-    return data;
+    return { data, replacedPopular };
   },
 
   async delete(id: string) {

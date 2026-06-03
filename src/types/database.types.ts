@@ -40,6 +40,7 @@ export interface Database {
           features: string[] | null
           active: boolean
           is_popular: boolean
+          category: "internet_only" | "internet_tv"
           created_at: string
           updated_at: string
         }
@@ -52,6 +53,7 @@ export interface Database {
           features?: string[] | null
           active?: boolean
           is_popular?: boolean
+          category?: "internet_only" | "internet_tv"
           created_at?: string
           updated_at?: string
         }
@@ -64,6 +66,7 @@ export interface Database {
           features?: string[] | null
           active?: boolean
           is_popular?: boolean
+          category?: "internet_only" | "internet_tv"
           created_at?: string
           updated_at?: string
         }

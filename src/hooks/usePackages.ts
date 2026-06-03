@@ -27,9 +27,14 @@ export function usePackages() {
   const createPackage = async (pkg: PackageInsert) => {
     setLoading(true);
     try {
-      const newPkg = await packagesService.create(pkg);
-      setPackages((prev) => [newPkg, ...prev]);
-      return newPkg;
+      const { data: newPkg, replacedPopular } = await packagesService.create(pkg);
+      setPackages((prev) => {
+        const cleaned = replacedPopular
+          ? prev.map((p) => ({ ...p, is_popular: false }))
+          : prev;
+        return [newPkg, ...cleaned];
+      });
+      return { data: newPkg, replacedPopular };
     } catch (err: any) {
       setError(err);
       throw err;
@@ -41,9 +46,17 @@ export function usePackages() {
   const updatePackage = async (id: string, pkg: PackageUpdate) => {
     setLoading(true);
     try {
-      const updatedPkg = await packagesService.update(id, pkg);
-      setPackages((prev) => prev.map((p) => (p.id === id ? updatedPkg : p)));
-      return updatedPkg;
+      const { data: updatedPkg, replacedPopular } = await packagesService.update(id, pkg);
+      setPackages((prev) =>
+        prev.map((p) => {
+          let updatedItem = p.id === id ? updatedPkg : p;
+          if (replacedPopular && p.id !== id) {
+            updatedItem = { ...updatedItem, is_popular: false };
+          }
+          return updatedItem;
+        })
+      );
+      return { data: updatedPkg, replacedPopular };
     } catch (err: any) {
       setError(err);
       throw err;
