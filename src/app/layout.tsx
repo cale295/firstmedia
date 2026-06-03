@@ -75,6 +75,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://firstmedia-xlsatu.id",
   },
+  verification: {
+    google: "3goOYnFrlfBA7k7SLaETEfyVldmmiRzzXTAHLiojfw4",
+  },
 };
 
 const organizationSchema = {
