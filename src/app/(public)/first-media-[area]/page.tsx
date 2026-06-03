@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const formattedArea = formatArea(area || "");
   const title = `Pasang First Media ${formattedArea} | Internet Fiber Cepat`;
   const description = `Pasang internet fiber optic First Media di ${formattedArea}. Nikmati koneksi unlimited tanpa FUP, kecepatan hingga 500 Mbps, dan TV Kabel 150+ channel. Hubungi sales resmi untuk pemasangan cepat di ${formattedArea}.`;
-  const canonicalUrl = `https://paketfirstmedia.web.id/first-media-${area}`;
+  const canonicalUrl = `https://firstmedia-xlsatu.id/first-media-${area}`;
 
   return {
     title,

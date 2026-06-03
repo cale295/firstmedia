@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://paketfirstmedia.web.id";
+  const baseUrl = "https://firstmedia-xlsatu.id";
 
   const routes: MetadataRoute.Sitemap = [
     {
