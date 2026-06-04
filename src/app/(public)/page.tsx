@@ -5,7 +5,6 @@
  */
 import dynamic from "next/dynamic";
 import Hero from "@/sections/Hero";
-import StructuredData from "@/components/StructuredData";
 
 /** Skeleton placeholder — prevents CLS while sections hydrate */
 const SectionSkeleton = () => (
@@ -34,7 +33,6 @@ const FAQ = dynamic(() => import("@/sections/FAQ"), {
 export default function Home() {
   return (
     <>
-      <StructuredData />
       <Hero />
       <Features />
       <Packages />
