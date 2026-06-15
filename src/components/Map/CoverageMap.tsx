@@ -76,7 +76,7 @@ export default function CoverageMap({ areas }: CoverageMapProps) {
   const mapAreas = safeAreas.filter(a => a.latitude !== null && a.longitude !== null);
 
   return (
-    <div className="relative w-full h-full min-h-[400px] md:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200 z-10">
+    <div className="relative w-full h-full min-h-[350px] sm:min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200 z-10">
       <MapContainer
         center={DEFAULT_CENTER}
         zoom={DEFAULT_ZOOM}
