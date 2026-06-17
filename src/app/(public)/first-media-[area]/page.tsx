@@ -6,7 +6,6 @@ import Packages from "@/sections/Packages";
 import Coverage from "@/sections/Coverage";
 import { Phone } from "lucide-react";
 
-import Testimonials from "@/sections/Testimonials";
 
 interface Props {
   params: Promise<{ area: string }>;
@@ -125,7 +124,6 @@ export default async function LocalAreaPage({ params }: Props) {
       <Packages />
       <Features />
       <Coverage />
-      <Testimonials />
     </>
   );
 }
