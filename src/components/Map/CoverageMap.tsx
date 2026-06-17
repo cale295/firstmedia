@@ -97,6 +97,16 @@ export default function CoverageMap({ areas }: CoverageMapProps) {
             key={area.id}
             position={[area.latitude!, area.longitude!]}
             icon={createCustomIcon(area.active)}
+            title={area.city}
+            alt={`Pin lokasi ${area.city}`}
+            eventHandlers={{
+              add: (e) => {
+                const el = e.target.getElement();
+                if (el) {
+                  el.setAttribute("aria-label", `Pin lokasi ${area.city}`);
+                }
+              },
+            }}
           >
             <Popup className="custom-leaflet-popup">
               <div className="p-1 min-w-[200px]">
