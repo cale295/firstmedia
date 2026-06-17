@@ -54,7 +54,7 @@ export default async function Coverage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900">
               Jangkauan Jaringan First Media
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed font-medium">
+            <p className="text-slate-800 text-sm sm:text-base lg:text-lg leading-relaxed font-medium">
               Cek ketersediaan layanan First Media di kota atau area perumahan Anda melalui peta interaktif kami. Kami terus memperluas jaringan untuk layanan yang lebih maksimal.
             </p>
           </header>
@@ -92,7 +92,7 @@ export default async function Coverage() {
                   </div>
                   <div>
                     <h3 className="font-black text-slate-900 text-lg sm:text-xl">Area Layanan Aktif</h3>
-                    <p className="text-xs sm:text-sm text-slate-500 font-bold uppercase tracking-wider mt-0.5">
+                    <p className="text-xs sm:text-sm text-slate-700 font-bold uppercase tracking-wider mt-0.5">
                       Kota yang didukung jaringan fiber optic kami
                     </p>
                   </div>
@@ -133,7 +133,7 @@ export default async function Coverage() {
                 <div className="p-5 sm:p-6 bg-brand-50 rounded-2xl border border-brand-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="space-y-0.5">
                     <p className="font-bold text-brand-900 text-sm">Kota Anda tidak ada di daftar?</p>
-                    <p className="text-xs text-brand-700 font-medium">
+                    <p className="text-xs text-brand-800 font-bold">
                       Silakan hubungi admin kami untuk cek manual via titik koordinat rumah Anda.
                     </p>
                   </div>
@@ -158,7 +158,7 @@ export default async function Coverage() {
                 <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight mb-2">
                   Kualitas Layanan Kami
                 </h3>
-                <p className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-8">
+                <p className="text-slate-700 text-sm font-bold uppercase tracking-wider mb-8">
                   Mengapa memilih First Media?
                 </p>
 
@@ -171,7 +171,7 @@ export default async function Coverage() {
                       </div>
                       <div className="space-y-1">
                         <h4 className="font-bold text-slate-900 text-base">{stat.title}</h4>
-                        <p className="text-slate-500 text-sm font-medium leading-relaxed">{stat.desc}</p>
+                        <p className="text-slate-700 text-sm font-medium leading-relaxed">{stat.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -188,7 +188,7 @@ export default async function Coverage() {
                 >
                   Konsultasi Jaringan Gratis
                 </a>
-                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-3">
+                <p className="text-[10px] text-slate-650 font-bold uppercase tracking-widest mt-3">
                   Tanpa Komitmen — Layanan 24/7
                 </p>
               </div>

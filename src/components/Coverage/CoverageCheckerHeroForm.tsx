@@ -137,20 +137,20 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
 
   const getBorderColorClass = (fieldName: keyof FormData) => {
     if (errors[fieldName]) {
-      return "border-red-400 focus:border-red-500 focus:ring-4 focus:ring-red-100/50";
+      return "border-red-500 focus:border-red-600 focus:ring-4 focus:ring-red-100";
     }
-    return "border-white/20 focus:border-brand-500 focus:ring-4 focus:ring-brand-100/50";
+    return "border-slate-300 focus:border-brand-600 focus:ring-4 focus:ring-brand-100";
   };
 
   return (
-    <article className="w-full bg-white/70 backdrop-blur-xl border border-white/40 shadow-2xl rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+    <article className="w-full bg-white/80 backdrop-blur-xl border border-white shadow-2xl rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
       {/* Subtle light reflections */}
       <div className="absolute -right-20 -top-20 w-48 h-48 bg-brand-100/30 rounded-full blur-3xl opacity-60 -z-10 pointer-events-none"></div>
       
       <div>
         <div className="text-center mb-6">
-          <h3 className="text-2xl font-black text-slate-900 leading-tight">Cek Coverage Area</h3>
-          <p className="text-slate-600 text-xs font-semibold mt-1">
+          <h2 className="text-2xl font-black text-slate-950 leading-tight">Cek Coverage Area</h2>
+          <p className="text-slate-800 text-xs font-semibold mt-1.5">
             Isi data berikut dan kami akan menghubungi Anda.
           </p>
         </div>
@@ -158,11 +158,11 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
         <form onSubmit={handleSubmit} className="space-y-4.5" noValidate>
           {/* Nama Lengkap */}
           <div className="space-y-1">
-            <label htmlFor="hero-name" className="block text-[11px] font-black uppercase tracking-wider text-slate-600">
+            <label htmlFor="hero-name" className="block text-[11px] font-black uppercase tracking-wider text-slate-800">
               Nama Lengkap
             </label>
             <div className="relative">
-              <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 flex items-center justify-center">
+              <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 flex items-center justify-center">
                 <User className="w-4 h-4" />
               </div>
               <input
@@ -173,7 +173,7 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="Masukkan nama lengkap Anda"
-                className={`w-full pl-10 pr-4 py-3 bg-white/50 border rounded-2xl text-slate-900 text-sm font-bold placeholder:text-slate-400 placeholder:font-medium transition-all duration-200 outline-none ${getBorderColorClass(
+                className={`w-full pl-10 pr-4 py-3 bg-white border rounded-2xl text-slate-950 text-sm font-bold placeholder:text-slate-500 placeholder:font-medium transition-all duration-200 outline-none ${getBorderColorClass(
                   "name"
                 )}`}
                 aria-required="true"
@@ -182,7 +182,7 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
               />
             </div>
             {errors.name && (
-              <p className="text-[11px] text-red-500 font-bold mt-1 pl-1" role="alert">
+              <p className="text-[11px] text-red-600 font-bold mt-1 pl-1" role="alert">
                 {errors.name}
               </p>
             )}
@@ -190,11 +190,11 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
 
           {/* Email */}
           <div className="space-y-1">
-            <label htmlFor="hero-email" className="block text-[11px] font-black uppercase tracking-wider text-slate-600">
+            <label htmlFor="hero-email" className="block text-[11px] font-black uppercase tracking-wider text-slate-800">
               Alamat Email
             </label>
             <div className="relative">
-              <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 flex items-center justify-center">
+              <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 flex items-center justify-center">
                 <Mail className="w-4 h-4" />
               </div>
               <input
@@ -205,7 +205,7 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="contoh@email.com"
-                className={`w-full pl-10 pr-4 py-3 bg-white/50 border rounded-2xl text-slate-900 text-sm font-bold placeholder:text-slate-400 placeholder:font-medium transition-all duration-200 outline-none ${getBorderColorClass(
+                className={`w-full pl-10 pr-4 py-3 bg-white border rounded-2xl text-slate-955 text-sm font-bold placeholder:text-slate-500 placeholder:font-medium transition-all duration-200 outline-none ${getBorderColorClass(
                   "email"
                 )}`}
                 aria-required="true"
@@ -214,7 +214,7 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
               />
             </div>
             {errors.email && (
-              <p className="text-[11px] text-red-500 font-bold mt-1 pl-1" role="alert">
+              <p className="text-[11px] text-red-600 font-bold mt-1 pl-1" role="alert">
                 {errors.email}
               </p>
             )}
@@ -222,11 +222,11 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
 
           {/* Nomor WhatsApp */}
           <div className="space-y-1">
-            <label htmlFor="hero-phone" className="block text-[11px] font-black uppercase tracking-wider text-slate-600">
+            <label htmlFor="hero-phone" className="block text-[11px] font-black uppercase tracking-wider text-slate-800">
               Nomor WhatsApp
             </label>
             <div className="relative">
-              <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 flex items-center justify-center">
+              <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 flex items-center justify-center">
                 <Phone className="w-4 h-4" />
               </div>
               <input
@@ -237,7 +237,7 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="Contoh: 0895329158096"
-                className={`w-full pl-10 pr-4 py-3 bg-white/50 border rounded-2xl text-slate-900 text-sm font-bold placeholder:text-slate-400 placeholder:font-medium transition-all duration-200 outline-none ${getBorderColorClass(
+                className={`w-full pl-10 pr-4 py-3 bg-white border rounded-2xl text-slate-955 text-sm font-bold placeholder:text-slate-500 placeholder:font-medium transition-all duration-200 outline-none ${getBorderColorClass(
                   "phone"
                 )}`}
                 aria-required="true"
@@ -246,7 +246,7 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
               />
             </div>
             {errors.phone && (
-              <p className="text-[11px] text-red-500 font-bold mt-1 pl-1" role="alert">
+              <p className="text-[11px] text-red-600 font-bold mt-1 pl-1" role="alert">
                 {errors.phone}
               </p>
             )}
@@ -254,11 +254,11 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
 
           {/* Kota / Area */}
           <div className="space-y-1">
-            <label htmlFor="hero-city" className="block text-[11px] font-black uppercase tracking-wider text-slate-600">
+            <label htmlFor="hero-city" className="block text-[11px] font-black uppercase tracking-wider text-slate-800">
               Kota / Area
             </label>
             <div className="relative">
-              <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 flex items-center justify-center">
+              <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 flex items-center justify-center">
                 <MapPin className="w-4 h-4" />
               </div>
               <input
@@ -269,7 +269,7 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="Masukkan Kota atau Area Anda"
-                className={`w-full pl-10 pr-4 py-3 bg-white/50 border rounded-2xl text-slate-900 text-sm font-bold placeholder:text-slate-400 placeholder:font-medium transition-all duration-200 outline-none ${getBorderColorClass(
+                className={`w-full pl-10 pr-4 py-3 bg-white border rounded-2xl text-slate-955 text-sm font-bold placeholder:text-slate-500 placeholder:font-medium transition-all duration-200 outline-none ${getBorderColorClass(
                   "city"
                 )}`}
                 aria-required="true"
@@ -278,7 +278,7 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
               />
             </div>
             {errors.city && (
-              <p className="text-[11px] text-red-500 font-bold mt-1 pl-1" role="alert">
+              <p className="text-[11px] text-red-600 font-bold mt-1 pl-1" role="alert">
                 {errors.city}
               </p>
             )}
@@ -286,11 +286,11 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
 
           {/* Alamat Lengkap */}
           <div className="space-y-1">
-            <label htmlFor="hero-address" className="block text-[11px] font-black uppercase tracking-wider text-slate-600">
+            <label htmlFor="hero-address" className="block text-[11px] font-black uppercase tracking-wider text-slate-800">
               Alamat Lengkap
             </label>
             <div className="relative">
-              <div className="absolute left-3.5 top-4.5 text-slate-400 flex items-start justify-center">
+              <div className="absolute left-3.5 top-4.5 text-slate-500 flex items-start justify-center">
                 <MapPin className="w-4 h-4" />
               </div>
               <textarea
@@ -300,7 +300,7 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="Tuliskan nama jalan, nomor rumah, RT/RW, kelurahan, kecamatan, dan nama perumahan (jika ada)"
-                className={`w-full pl-10 pr-4 py-3 bg-white/50 border rounded-2xl text-slate-900 text-sm font-bold placeholder:text-slate-400 placeholder:font-medium transition-all duration-200 outline-none resize-none min-h-[96px] ${getBorderColorClass(
+                className={`w-full pl-10 pr-4 py-3 bg-white border rounded-2xl text-slate-955 text-sm font-bold placeholder:text-slate-500 placeholder:font-medium transition-all duration-200 outline-none resize-none min-h-[96px] ${getBorderColorClass(
                   "address"
                 )}`}
                 aria-required="true"
@@ -309,7 +309,7 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
               />
             </div>
             {errors.address && (
-              <p className="text-[11px] text-red-500 font-bold mt-1 pl-1" role="alert">
+              <p className="text-[11px] text-red-600 font-bold mt-1 pl-1" role="alert">
                 {errors.address}
               </p>
             )}
@@ -333,10 +333,10 @@ Mohon diinformasikan apakah lokasi saya sudah tercover jaringan.`;
             </button>
 
             {/* Quick response note */}
-            <p className="text-[10px] text-slate-500 flex items-center justify-center gap-1.5 mt-3.5 font-bold uppercase tracking-wider">
+            <p className="text-[10px] text-slate-700 flex items-center justify-center gap-1.5 mt-3.5 font-bold uppercase tracking-wider">
               <span className="flex h-1.5 w-1.5 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-600"></span>
               </span>
               Respon cepat via WhatsApp
             </p>
