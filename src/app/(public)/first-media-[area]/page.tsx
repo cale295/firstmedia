@@ -6,6 +6,8 @@ import Packages from "@/sections/Packages";
 import Coverage from "@/sections/Coverage";
 import { Phone } from "lucide-react";
 
+import Testimonials from "@/sections/Testimonials";
+
 interface Props {
   params: Promise<{ area: string }>;
 }
@@ -67,7 +69,7 @@ function LocalAreaContent({ area }: { area: string }) {
               Internet Fiber Optic di {area}
             </h2>
             <p className="text-slate-600 text-lg font-medium leading-relaxed">
-              First Media hadir di {area} dengan infrastruktur fiber optic 100% yang memberikan kecepatan simetris upload dan download hingga 500 Mbps — tanpa batasan kuota, tanpa gangguan.
+              First Media hadir di {area} dengan infrastruktur fiber optic 100% yang memberikan kecepatan simetris upload and download hingga 500 Mbps — tanpa batasan kuota, tanpa gangguan.
             </p>
             <p className="text-slate-600 font-medium leading-relaxed">
               Lebih dari ribuan pelanggan di {area} telah menikmati layanan streaming, gaming, dan kerja dari rumah yang lebih lancar bersama First Media. Teknisi berpengalaman kami siap melakukan instalasi di {area} dalam 1–3 hari kerja.
@@ -120,9 +122,10 @@ export default async function LocalAreaPage({ params }: Props) {
     <>
       <Hero localArea={formattedArea} />
       <LocalAreaContent area={formattedArea} />
-      <Features />
       <Packages />
+      <Features />
       <Coverage />
+      <Testimonials />
     </>
   );
 }

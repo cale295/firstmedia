@@ -34,8 +34,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Features />
       <Packages />
+      <Features />
       <Coverage />
       <FAQ />
     </>
